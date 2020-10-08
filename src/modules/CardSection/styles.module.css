@@ -1,0 +1,93 @@
+.FlexWrap {
+    width: 65%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.CardContainer {
+    padding: 10px;
+}
+
+.Card {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 9px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ImageContainer {
+    background-color: #f2f6fa;
+    height: 160px;
+    width: 178px;
+}
+
+.CardBodySection {
+    display: flex;
+    padding: 5px 0;
+    width: 178px;
+}
+
+.ProductTitle {
+    font-size: 17px;
+    font-weight: 800;
+    color: #333;
+}
+
+.PriceSection {
+    display: flex;
+    flex-direction: row;
+}
+
+.OriginalPrice {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 10px 0 0;
+}
+
+.DiscountPrice {
+    text-decoration: line-through;
+    font-weight: 400;
+    color: #666;
+    padding: 0 4px 0 0;
+}
+
+.DiscountPercent {
+    font-size: 14px;
+}
+
+.SizeSection {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+.Description {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.Size {
+    color: #777;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0 5px;
+}
+
+@media screen and (max-width: 400px) {
+    .FlexWrap {
+        margin: 0;
+    }
+
+    .ImageContainer {
+        width: 166px;
+        height: 160px;
+    }
+}
+

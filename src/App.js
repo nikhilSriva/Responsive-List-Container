@@ -1,10 +1,17 @@
 import React from 'react';
 import './index.css';
+import {BrowserRouter} from "react-router-dom";
+import {makeMainRoutes} from "./routes";
 
 const App = () => {
+    const routes = makeMainRoutes()
     return (
         <div className="container">
-            <h3>Product Listing Page</h3>
+            <BrowserRouter>
+                <div id={'mainWrapper'} className={'Content'}>
+                    {routes}
+                </div>
+            </BrowserRouter>
         </div>
     );
 };
