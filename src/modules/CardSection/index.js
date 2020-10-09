@@ -19,7 +19,7 @@ const CardSection = ({data}) => {
                                 <Card.Img className={classes.ImageContainer}
                                           alt={`Picture is ${item.title}`}
                                           src={item?.imageUrl || PLACEHOLDER}/>
-                                <Card.Body style={{padding: '15px 0'}}>
+                                <Card.Body className={classes.CardBody}>
                                     <label className={classes.ProductTitle}>{item.title}</label>
                                     <div className={classes.CardBodySection}>
                                         <div className={classes.Description}>{item.subTitle}</div>
