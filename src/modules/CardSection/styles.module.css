@@ -22,7 +22,16 @@
 .ImageContainer {
     background-color: #f2f6fa;
     height: 160px;
+    min-height: 160px;
     width: 178px;
+}
+
+.CardBody {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 0 0 0;
 }
 
 .CardBodySection {
@@ -49,14 +58,17 @@
 }
 
 .DiscountPrice {
+    font-size: 15px;
     text-decoration: line-through;
     font-weight: 400;
     color: #666;
-    padding: 0 4px 0 0;
+    padding: 0 10px 0 0;
 }
 
 .DiscountPercent {
     font-size: 14px;
+    color: #FF305B;
+    font-weight: 500;
 }
 
 .SizeSection {
@@ -66,7 +78,7 @@
 }
 
 .Description {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: #666;
     flex-wrap: wrap;

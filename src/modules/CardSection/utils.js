@@ -1,3 +1,4 @@
 export const localeFormattedString = (string, locale = 'en-IN', options) => {
-    return string?.toLocaleString(locale, options) || string
+    let transformedValue = string?.toLocaleString(locale, options) || string
+    return transformedValue?.split('.')?.[0] || transformedValue
 };

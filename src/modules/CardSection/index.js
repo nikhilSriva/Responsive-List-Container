@@ -7,7 +7,6 @@ import {PLACEHOLDER} from "../../utilities/constants";
 import {localeFormattedString} from "./utils";
 
 const CardSection = ({data}) => {
-
     return (
         <div className={classes.FlexWrap}>
             {
