@@ -9,3 +9,10 @@ export const fetchProducts = async (query, page = 1) => {
 
     }
 };
+export const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+};

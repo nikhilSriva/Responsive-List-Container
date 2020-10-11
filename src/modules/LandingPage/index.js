@@ -2,9 +2,10 @@ import React from "react";
 import classes from './styles.module.css'
 import {withRouter} from 'react-router-dom'
 import CardSection from "../CardSection";
-import {fetchProducts} from "./utils";
+import {fetchProducts, scrollToTop} from "./utils";
 import {SearchBar} from "../../components/SearchBar";
 import {Loader} from "../../components";
+import {ReactSVG} from "react-svg";
 
 class LandingPage extends React.Component {
     constructor(props) {
@@ -28,14 +29,12 @@ class LandingPage extends React.Component {
 
     componentDidMount() {
         this.fetchData();
-        window.scrollTo({
-            left: 0,
-            top: 0
-        })
-        this.setupIntersectionObserver()
+        scrollToTop()
+        this.setupIntersectionObserver();
+        this.setupScrollToObserver();
     }
 
-    setupIntersectionObserver = () => {
+    setupScrollToObserver = () => {
         let el = document.getElementById('loader');
         let context = this;
         let observer = new IntersectionObserver(function (entries) {
@@ -45,6 +44,23 @@ class LandingPage extends React.Component {
                         context.fetchData('', context.state.page)
                     })
                 }
+            });
+        }, {
+            threshold: 1.0
+        });
+        observer.observe(el);
+    };
+
+
+    setupIntersectionObserver = () => {
+        let el = document.getElementById('searchBar');
+        let context = this;
+        let observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    context.setState({showScrollToWidget: true});
+                } else
+                    context.setState({showScrollToWidget: false});
             });
         }, {
             threshold: 1.0
@@ -69,6 +85,23 @@ class LandingPage extends React.Component {
                 <div id={'loader'} className={classes.LoadMore}>
                     {this.state.loadMore && <Loader class={classes.Loader}/>}
                 </div>
+                {
+                    this.state.showScrollToWidget && <div
+                        className={classes.ScrollToButton}
+                        style={{
+                            top: document.documentElement.clientHeight - 100,
+                        }}>
+                        <ReactSVG
+                            onClick={() => {
+                                scrollToTop()
+                                this.setState({showScrollToWidget: false})
+                            }}
+                            beforeInjection={svg => {
+                                svg.classList.add(classes.Logo)
+                            }}
+                            src={require('../../assets/arrow.svg')}
+                        />
+                    </div>}
 
             </div>
         )

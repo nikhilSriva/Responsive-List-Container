@@ -5,7 +5,7 @@ import {Loader} from "../Loader";
 export const SearchBar = ({onChangeText, isLoading}) => {
     const [query, setQuery] = useState('');
     return (
-        <div className={classes.SearchBarContainer}>
+        <div id={'searchBar'} className={classes.SearchBarContainer}>
             <div className={classes.InputContainer}>
                 <input
                     className={classes.Input}
