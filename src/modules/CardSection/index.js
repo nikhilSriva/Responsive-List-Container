@@ -8,7 +8,7 @@ import {localeFormattedString} from "./utils";
 
 const CardSection = ({data}) => {
     return (
-        <div className={classes.FlexWrap}>
+        <div id={'flexSection'}  className={classes.FlexWrap}>
             {
                 !isEmpty(data) && data.map(item => {
                     return (

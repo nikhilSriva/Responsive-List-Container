@@ -2,7 +2,7 @@ import React from "react";
 import classes from './styles.module.css'
 import {ReactSVG} from "react-svg";
 
-export const Header = ({onChangeText, isLoading}) => {
+export const Header = () => {
     return (
         <div className={classes.Header}>
             <ReactSVG
