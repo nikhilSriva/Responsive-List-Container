@@ -1,0 +1,13 @@
+.Header {
+    width: 100%;
+    display: flex;
+    border: 0 solid #222;
+    border-bottom-width: 1px;
+    padding: 10px 0;
+}
+
+.Logo {
+    height: 35px;
+    fill: #6e7380;
+    transform: translateX(30px);
+}
