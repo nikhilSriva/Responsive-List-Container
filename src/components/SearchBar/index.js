@@ -11,6 +11,7 @@ export const SearchBar = ({onChangeText, isLoading}) => {
                     className={classes.Input}
                     value={query}
                     type='text'
+                    placeholder={'Search product title'}
                     onChange={(event) => {
                         setQuery(event.target.value)
                         onChangeText(event.target.value)

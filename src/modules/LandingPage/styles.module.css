@@ -66,3 +66,9 @@
     box-shadow: 0px 2px 4px 2px #CBCED4;
 
 }
+
+@media only screen and (max-width: 425px) {
+    .ScrollToButton {
+        right: 10px;
+    }
+}

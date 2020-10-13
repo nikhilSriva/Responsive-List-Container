@@ -92,14 +92,16 @@
     padding: 0 5px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
     .FlexWrap {
         margin: 0;
+        width: 100%;
     }
 
     .ImageContainer {
         width: 166px;
         height: 160px;
+        min-height: 160px;
     }
 }
 
